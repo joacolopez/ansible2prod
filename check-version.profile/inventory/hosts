@@ -1,0 +1,5 @@
+[wst]
+serverc.lab.example.com
+
+[wst:vars]
+ansible_user=curso

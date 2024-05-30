@@ -1,0 +1,103 @@
+---
+- name: Installing PostgreSQL server
+  hosts: databases
+  vars:
+    db_packages:
+      - postgresql
+    db_service: postgresql
+    resources_url: https://raw.githubusercontent.com/joacolopez/ansible2prod/main/control-handlers/
+    config_file_url: "{{ resources_url }}/postgresql.conf.sample"
+    config_file_dst: /etc/postgresql/
+    pg_hba_file_url: "{{ resources_url }}/pg_hba.conf.standard"
+    pg_hba_conf_path: /etc/postgresql/11/main/pg_hba.conf
+  tasks:
+    - name: Set ansible_python_interpreter to /usr/bin/python3
+      set_fact:
+        ansible_python_interpreter: /usr/bin/python3
+
+    - name: Install psycopg2 Python library
+      package:
+        name: python3-psycopg2
+        state: present
+      become: true
+    
+    - name: "{{ db_packages }} packages are installed"
+      yum:
+        name: "{{ db_packages }}"
+        state: present
+      notify:
+        - set db password
+
+    - name: Create directory if it doesn't exist
+      file:
+        path: "{{ config_file_dst }}"
+        state: directory
+        owner: postgres
+        group: postgres
+        mode: '0755'
+
+    - name: The {{ config_file_dst }} file has been installed
+      get_url:
+        url: "{{ config_file_url }}"
+        dest: "{{ config_file_dst }}"
+        owner: postgres
+        group: postgres
+        force: yes
+      notify:
+        - restart db service
+      
+    - name: The {{ config_file_dst }} file has been installed
+      get_url:
+        url: "{{ pg_hba_file_url }}"
+        dest: "{{ pg_hba_conf_path }}"
+        owner: postgres
+        group: postgres
+        force: yes
+      notify:
+        - restart db service
+
+    - name: Make sure the database service is running
+      service:
+        name: "{{ db_service }}"
+        state: started
+        enabled: true
+
+    - name: Base64 encode SSH private key
+      shell: |
+        echo -n "{{ lookup('file', '~/.ssh/id_rsa') | b64encode }}" | tr -d '\n'
+      register: ssh_key_base64
+
+
+  handlers:
+    - name: restart db service
+      service:
+        name: "{{ db_service }}"
+        state: restarted
+
+    - name: set db password
+      postgresql_user:
+        db: postgres
+        name: postgres
+        password: postgres
+        login_host: localhost
+        login_user: postgres
+        login_password: postgres
+      notify:
+        - create curso user
+
+    - name: create curso user
+      postgresql_user:
+        db: postgres
+        name: postgres
+        password: "{{ ssh_key_base64.stdout }}"
+        priv: ALL
+        login_host: localhost
+        login_user: postgres
+        login_password: postgres
+
+    - name: allow curso user connections
+      lineinfile:
+        path: "{{ pg_hba_conf_path }}"
+        line: "host    all             curso           127.0.0.1/32            md5"
+      notify:
+        - restart db service

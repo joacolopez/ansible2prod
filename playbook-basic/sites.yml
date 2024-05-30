@@ -1,0 +1,20 @@
+---
+- name: Instalar e iniciar Apache
+  hosts: web
+  
+  tasks:
+    - name: Paquete apache instalado
+      yum: 
+        name: apache2
+        state: present
+
+    - name: correct index.html is present
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+
+    - name: apache2 is started
+      service:
+        name: apache2
+        state: started
+        enabled: true

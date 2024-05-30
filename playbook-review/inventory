@@ -1,2 +1,5 @@
-CursoDebian
-wst000f000
+[control_node]
+localhost
+
+[webserver]
+serverb.lab.example.com

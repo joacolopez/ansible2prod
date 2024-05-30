@@ -1,0 +1,37 @@
+---
+- name: Configurar servidor web en Debian 10
+  hosts: web_server
+  become: true
+
+  pre_tasks:
+    - name: Actualizar el cache de APT
+      apt:
+        update_cache: yes
+
+    - name: Crear directorio de backups si no existe
+      file:
+        path: "{{ nginx_backup_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+  roles:
+    - webserver
+
+  post_tasks:
+    - name: Verificar que el servicio nginx está corriendo
+      service:
+        name: nginx
+        state: started
+
+    - name: Obtener la página de bienvenida de nginx
+      uri:
+        url: http://{{ ansible_facts['hostname'] }}
+        return_content: yes
+        status_code: 200
+      register: nginx_page
+
+    - name: Mostrar el contenido de la página de bienvenida de nginx
+      debug:
+        var: nginx_page.content

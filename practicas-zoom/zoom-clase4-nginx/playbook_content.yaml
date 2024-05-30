@@ -1,0 +1,67 @@
+---
+- name: Install and configure Nginx
+  hosts: web_server
+  become: yes
+  vars:
+    web_root: /var/www/html
+    index_file: index.html
+    web_sv_pkg: nginx
+    web_sv_svc: nginx
+    nginx_cnf_file: files/sitio.template
+
+  tasks:
+    - name: Install {{ web_sv_pkg }}
+      apt:
+        name: "{{ web_sv_pkg }}"
+        state: present
+
+    - name: Ensure {{ web_sv_svc }} is enabled and started
+      service:
+        name: "{{ web_sv_svc }}"
+        state: started
+        enabled: true
+
+    - name: Create a simple index.html
+      copy:
+        content: "<html><body><h1>Hello from Ansible!</h1></body></html>"
+        dest: "{{ web_root }}/{{ index_file }}"
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Remove default Nginx site configuration
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+
+    - name: Create a basic Nginx site configuration
+      copy:
+        dest: /etc/nginx/sites-available/sitio_practica
+        content: |
+          server {
+              listen 80 default_server;
+              listen [::]:80 default_server;
+              root {{ web_root }};
+              index {{ index_file }};
+              server_name _;
+              location / {
+                  try_files $uri $uri/ =404;
+              }
+          }
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Enable the Nginx site configuration
+      file:
+        src: /etc/nginx/sites-available/sitio_practica
+        dest: /etc/nginx/sites-enabled/sitio_practica
+        state: link
+
+    - name: Test Nginx configuration
+      command: nginx -t
+
+    - name: Reload Nginx to apply changes
+      service:
+        name: "{{ web_sv_svc }}"
+        state: reloaded

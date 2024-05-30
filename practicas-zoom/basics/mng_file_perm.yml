@@ -1,0 +1,21 @@
+---
+- name: Administrar archivos y permisos
+  hosts: debian
+  become: yes
+  tasks:
+    - name: Crear un directorio
+      file:
+        path: /opt/test
+        state: directory
+        mode: '0755'
+
+    - name: Crear archivo con un contenido específico
+      copy:
+        dest: /opt/test/prueba.txt
+        content: "Este archivo es una prueba\n"
+        mode: '0644'
+
+    - name: Ensure a file has specific permissions
+      file:
+        path: /opt/test/prueba.txt
+        mode: '0644'

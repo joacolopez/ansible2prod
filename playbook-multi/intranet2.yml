@@ -1,0 +1,44 @@
+---
+- name: Enable intranet services
+  hosts: serverb.lab.example.com
+  become: yes
+  tasks:
+    - name: latest version of apache2 and ufw installed
+      yum:
+        name:
+          - apache2
+          - ufw
+        state: latest
+
+    - name: test html page is installed
+      copy: 
+        content: "Welcome to the exmaple.com intranet!\n"
+        dest: /var/www/html/index.html
+
+    - name: ufw enabled and running
+      service:
+        name: ufw
+        enabled: true
+        state: started
+
+    - name: ufw permits access to http service
+      ufw:
+        rule: allow
+        port: http
+        comment: "Allow http traffic"
+
+    - name: apache2 enabled and running
+      service:
+        name: apache2
+        enabled: true
+        state: started
+
+- name: Test intranet web server
+  hosts: localhost
+  become: no
+  tasks: 
+    - name: connect to intranet web server
+      uri:
+        url: http://serverb.lab.example.com
+        return_content: yes
+        status_code: 200

@@ -1,0 +1,30 @@
+---
+- name: Deploy version check script
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure zenity is installed
+      apt:
+        name: zenity
+        state: present
+
+    - name: Ensure curl is installed
+      apt:
+        name: curl
+        state: present
+
+    - name: Copy the version check script to /usr/local/bin
+      copy:
+        src: "{{ version_script_source }}"
+        dest: "{{ version_script_dest }}"
+        mode: '0755'
+
+    - name: Create script in /etc/profile.d to run at login
+      copy:
+        dest: "{{ profile_script_dest }}"
+        content: |
+          #!/bin/bash
+          # Verificar si el entorno gráfico está disponible
+          if [ -n "$DISPLAY" ]; then
+            /usr/local/bin/check_version.sh "{{ version_server_url }}"
+          fi

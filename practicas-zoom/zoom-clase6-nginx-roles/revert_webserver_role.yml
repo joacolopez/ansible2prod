@@ -1,0 +1,33 @@
+---
+- name: Revertir configuración de servidor web en Debian 10
+  hosts: web_server
+  become: true
+
+  tasks:
+    - name: Detener y deshabilitar el servicio nginx
+      service:
+        name: nginx
+        state: stopped
+        enabled: no
+
+    - name: Desinstalar nginx y curl
+      apt:
+        name:
+          - nginx
+          - curl
+        state: absent
+
+    - name: Eliminar archivo de configuración de nginx
+      file:
+        path: /etc/nginx/nginx.conf
+        state: absent
+
+    - name: Eliminar página de bienvenida
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
+    - name: Eliminar directorio de backups de nginx
+      file:
+        path: /var/backups/nginx
+        state: absent

@@ -1,0 +1,48 @@
+---
+# tasks file for webserver
+- name: Instalar paquetes web
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop: "{{ web_packages }}"
+  notify: restart_nginx
+
+- name: Configurar nginx con plantilla
+  template:
+    src: nginx.conf.j2
+    dest: "{{ nginx_config_file }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart_nginx
+
+- name: Crear página de bienvenida con plantilla
+  template:
+    src: index.html.j2
+    dest: "{{ index_file }}"
+    owner: www-data
+    group: www-data
+    mode: '0644'
+
+- name: Iniciar y habilitar nginx
+  service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Backup del archivo de configuración de nginx
+  copy:
+    src: "{{ nginx_config_file }}"
+    dest: "{{ nginx_backup_dir }}/nginx.conf.backup"
+    remote_src: yes
+    backup: yes
+  when: nginx_config_file is defined
+
+- name: Backup de la página de bienvenida
+  copy:
+    src: "{{ index_file }}"
+    dest: "{{ nginx_backup_dir }}/index.html.backup"
+    remote_src: yes
+    backup: yes
+  when: index_file is defined

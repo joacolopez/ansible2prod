@@ -1,0 +1,13 @@
+---
+- name: Using the copy module
+  hosts: all
+  remote_user: curso
+  tasks:
+     - name: Copy a file to managed hosts and set attributes
+       copy:
+         src: files/users.txt
+         dest: /home/curso/users.txt
+         owner: curso
+         group: curso
+         mode: u+rw,g-ws,o-rwx
+         setype: samba_share_t

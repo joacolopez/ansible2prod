@@ -1,0 +1,54 @@
+---
+- name: Enable internet services
+  hosts: serverb.lab.example.com
+  become: yes
+  tasks:
+    - name: latest version of all required packages installed
+      yum:
+        name:
+          - ufw
+          - apache2
+          - mariadb-server
+          - php
+          - php-mysql
+        state: latest
+
+    - name: ufw enabled and running
+      service:
+        name: ufw
+        enabled: true
+        state: started
+
+    - name: ufw permits http service
+      ufw:
+        rule: allow
+        port: http
+        comment: "Allow HTTP traffic"
+
+    - name: apache2 enabled and running
+      service:
+        name: apache2
+        enabled: true
+        state: started
+
+    - name: mariadb enable adn running
+      service:
+        name: mariadb
+        enabled: true
+        state: started
+
+    - name: test php page is installed
+      get_url:
+        url: "https://raw.githubusercontent.com/joonty/example/master/index.php"
+        dest: /var/www/html/index.php
+        mode: 0644
+
+- name: Test internet web server
+  hosts: localhost
+  become: no
+  tasks: 
+    - name: connect to internet web server
+      uri: 
+        url: http://serverb.lab.example.com
+        status_code: 200
+     

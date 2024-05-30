@@ -11,9 +11,8 @@
       enabled: true
 
   - name: Open the port for {{ rule }}
-    firewalld:
-      service: "{{ item }}"
-      immediate: true
-      permanent: true
+    ufw:
+      rule: allow
+      port: "{{ item }}"
       state: enabled
     loop: "{{ rule }}"

@@ -1,0 +1,774 @@
+May 22 00:00:07 serverb rsyslogd:  [origin software="rsyslogd" swVersion="8.1901.0" x-pid="10566" x-info="https://www.rsyslog.com"] rsyslogd was HUPed
+May 22 00:00:07 serverb systemd[1]: logrotate.service: Succeeded.
+May 22 00:00:07 serverb systemd[1]: Started Rotate log files.
+May 22 00:00:08 serverb systemd[1]: man-db.service: Succeeded.
+May 22 00:00:08 serverb systemd[1]: Started Daily man-db regeneration.
+May 22 00:05:01 serverb CRON[12443]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 00:09:01 serverb CRON[12451]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 00:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 00:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 00:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 00:15:01 serverb CRON[12505]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 00:17:01 serverb CRON[12511]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 00:25:01 serverb CRON[12523]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 00:35:01 serverb CRON[12538]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 00:39:01 serverb CRON[12546]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 00:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 00:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 00:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 00:45:01 serverb CRON[12600]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 00:55:01 serverb CRON[12615]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:05:01 serverb CRON[12630]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:09:01 serverb CRON[12638]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 01:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 01:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 01:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 01:15:01 serverb CRON[12692]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:17:01 serverb CRON[12697]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 01:25:01 serverb CRON[12710]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:35:01 serverb CRON[12725]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:39:01 serverb CRON[12732]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 01:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 01:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 01:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 01:45:01 serverb CRON[12787]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 01:55:01 serverb CRON[12802]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:05:01 serverb CRON[12816]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:09:01 serverb CRON[12824]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 02:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 02:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 02:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 02:15:01 serverb CRON[12878]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:17:01 serverb CRON[12884]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 02:25:01 serverb CRON[12896]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:35:01 serverb CRON[12911]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:39:01 serverb CRON[12919]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 02:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 02:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 02:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 02:45:01 serverb CRON[12974]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 02:55:01 serverb CRON[12989]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:05:01 serverb CRON[13004]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:09:01 serverb CRON[13012]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 03:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 03:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 03:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 03:15:01 serverb CRON[13066]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:17:01 serverb CRON[13071]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 03:25:01 serverb CRON[13083]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:35:01 serverb CRON[13098]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:39:01 serverb CRON[13106]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 03:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 03:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 03:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 03:45:01 serverb CRON[13160]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 03:55:01 serverb CRON[13175]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:05:01 serverb CRON[13190]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:09:01 serverb CRON[13197]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 04:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 04:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 04:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 04:15:01 serverb CRON[13252]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:17:01 serverb CRON[13257]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 04:25:01 serverb CRON[13269]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:35:01 serverb CRON[13284]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:39:01 serverb CRON[13292]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 04:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 04:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 04:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 04:45:01 serverb CRON[13346]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 04:55:01 serverb CRON[13361]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:05:01 serverb CRON[13376]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:09:01 serverb CRON[13384]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 05:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 05:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 05:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 05:15:01 serverb CRON[13438]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:17:01 serverb CRON[13443]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 05:25:01 serverb CRON[13456]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:35:01 serverb CRON[13471]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:39:01 serverb CRON[13479]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 05:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 05:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 05:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 05:45:01 serverb CRON[13533]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 05:55:01 serverb CRON[13548]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:05:01 serverb CRON[13563]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:09:00 serverb systemd[1]: Starting Clean php session files...
+May 22 06:09:00 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 06:09:00 serverb systemd[1]: Started Clean php session files.
+May 22 06:09:01 serverb CRON[13615]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 06:15:01 serverb CRON[13625]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:17:01 serverb CRON[13630]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 06:25:01 serverb CRON[13644]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:25:01 serverb CRON[13645]: (root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+May 22 06:35:01 serverb CRON[13734]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:35:10 serverb systemd[1]: Starting Daily apt upgrade and clean activities...
+May 22 06:35:10 serverb systemd[1]: apt-daily-upgrade.service: Succeeded.
+May 22 06:35:10 serverb systemd[1]: Started Daily apt upgrade and clean activities.
+May 22 06:39:00 serverb systemd[1]: Starting Clean php session files...
+May 22 06:39:00 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 06:39:00 serverb systemd[1]: Started Clean php session files.
+May 22 06:39:01 serverb CRON[13834]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 06:45:01 serverb CRON[13843]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 06:55:01 serverb CRON[13858]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:05:01 serverb CRON[13873]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:09:00 serverb systemd[1]: Starting Clean php session files...
+May 22 07:09:00 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 07:09:00 serverb systemd[1]: Started Clean php session files.
+May 22 07:09:01 serverb CRON[13926]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 07:15:01 serverb CRON[13935]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:17:01 serverb CRON[13941]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 07:25:01 serverb CRON[13953]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:35:01 serverb CRON[13968]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:39:00 serverb systemd[1]: Starting Clean php session files...
+May 22 07:39:00 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 07:39:00 serverb systemd[1]: Started Clean php session files.
+May 22 07:39:01 serverb CRON[14021]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 07:45:01 serverb CRON[14030]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 07:55:01 serverb CRON[14045]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:05:01 serverb CRON[14060]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:09:00 serverb systemd[1]: Starting Clean php session files...
+May 22 08:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 08:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 08:09:01 serverb CRON[14113]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 08:15:01 serverb CRON[14122]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:17:01 serverb CRON[14127]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 08:25:01 serverb CRON[14140]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:35:01 serverb CRON[14155]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 08:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 08:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 08:39:01 serverb CRON[14208]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 08:45:01 serverb CRON[14218]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 08:55:01 serverb CRON[14232]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:05:01 serverb CRON[14247]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 09:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 09:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 09:09:01 serverb CRON[14300]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 09:15:01 serverb CRON[14309]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:17:01 serverb CRON[14315]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 09:25:01 serverb CRON[14327]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:35:01 serverb CRON[14342]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 09:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 09:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 09:39:01 serverb CRON[14395]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 09:45:01 serverb CRON[14404]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 09:55:01 serverb CRON[14419]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:05:01 serverb CRON[14434]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 10:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 10:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 10:09:01 serverb CRON[14487]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 10:15:01 serverb CRON[14496]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:17:01 serverb CRON[14501]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 10:25:01 serverb CRON[14514]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:35:01 serverb CRON[14529]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 10:39:02 serverb CRON[14550]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 10:39:02 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 10:39:02 serverb systemd[1]: Started Clean php session files.
+May 22 10:45:01 serverb CRON[14591]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 10:55:01 serverb CRON[14606]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:05:01 serverb CRON[14621]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:09:01 serverb CRON[14628]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 11:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 11:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 11:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 11:15:01 serverb CRON[14682]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:17:01 serverb CRON[14688]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 11:25:01 serverb CRON[14701]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:35:01 serverb CRON[14716]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:39:01 serverb CRON[14724]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 11:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 11:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 11:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 11:45:01 serverb CRON[14778]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 11:55:01 serverb CRON[14793]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:05:01 serverb CRON[14808]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:09:01 serverb CRON[14816]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 12:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 12:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 12:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 12:15:01 serverb CRON[14878]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:17:01 serverb CRON[14883]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 12:25:01 serverb CRON[14896]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:35:01 serverb CRON[14911]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:39:01 serverb CRON[14919]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 12:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 12:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 12:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 12:45:01 serverb CRON[14973]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 12:55:01 serverb CRON[14988]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:05:01 serverb CRON[15003]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:09:01 serverb CRON[15011]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 13:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 13:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 13:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 13:15:01 serverb CRON[15065]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:17:01 serverb CRON[15071]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 13:25:01 serverb CRON[15083]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:26:23 serverb systemd[1]: Starting Daily apt download activities...
+May 22 13:26:23 serverb systemd[1]: apt-daily.service: Succeeded.
+May 22 13:26:23 serverb systemd[1]: Started Daily apt download activities.
+May 22 13:35:01 serverb CRON[15146]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:39:01 serverb CRON[15154]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 13:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 13:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 13:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 13:45:01 serverb CRON[15208]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 13:55:01 serverb CRON[15223]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:05:01 serverb CRON[15238]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:09:01 serverb CRON[15246]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 14:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 14:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 14:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 14:15:01 serverb CRON[15300]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:17:01 serverb CRON[15305]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 14:25:01 serverb CRON[15318]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:29:21 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 14:29:21 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 14:29:21 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 14:29:21 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 14:29:21 serverb systemd[15328]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 14:29:21 serverb systemd[15328]: Reached target Paths.
+May 22 14:29:21 serverb systemd[15328]: Listening on GnuPG network certificate management daemon.
+May 22 14:29:21 serverb systemd[15328]: Reached target Timers.
+May 22 14:29:21 serverb systemd[15328]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:29:21 serverb systemd[15328]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:29:21 serverb systemd[15328]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:29:21 serverb systemd[15328]: Starting D-Bus User Message Bus Socket.
+May 22 14:29:21 serverb systemd[15328]: Listening on D-Bus User Message Bus Socket.
+May 22 14:29:21 serverb systemd[15328]: Reached target Sockets.
+May 22 14:29:21 serverb systemd[15328]: Reached target Basic System.
+May 22 14:29:21 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 14:29:21 serverb systemd[1]: Started Session 1182 of user curso.
+May 22 14:29:21 serverb systemd[15328]: Reached target Default.
+May 22 14:29:21 serverb systemd[15328]: Startup finished in 28ms.
+May 22 14:29:22 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:29:22 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['http'] autoclean=False install_recommends=None name=http purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:30:23 serverb systemd[1]: session-1182.scope: Succeeded.
+May 22 14:30:33 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 14:30:33 serverb systemd[15328]: Stopped target Default.
+May 22 14:30:33 serverb systemd[15328]: Stopped target Basic System.
+May 22 14:30:33 serverb systemd[15328]: Stopped target Sockets.
+May 22 14:30:33 serverb systemd[15328]: gpg-agent-ssh.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:30:33 serverb systemd[15328]: gpg-agent-browser.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:30:33 serverb systemd[15328]: dbus.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed D-Bus User Message Bus Socket.
+May 22 14:30:33 serverb systemd[15328]: gpg-agent-extra.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:30:33 serverb systemd[15328]: gpg-agent.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 14:30:33 serverb systemd[15328]: Stopped target Timers.
+May 22 14:30:33 serverb systemd[15328]: dirmngr.socket: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Closed GnuPG network certificate management daemon.
+May 22 14:30:33 serverb systemd[15328]: Stopped target Paths.
+May 22 14:30:33 serverb systemd[15328]: Reached target Shutdown.
+May 22 14:30:33 serverb systemd[15328]: systemd-exit.service: Succeeded.
+May 22 14:30:33 serverb systemd[15328]: Started Exit the Session.
+May 22 14:30:33 serverb systemd[15328]: Reached target Exit the Session.
+May 22 14:30:33 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 14:30:33 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 14:30:33 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 14:30:33 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 14:30:33 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 14:30:33 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 14:30:33 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 14:30:55 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 14:30:55 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 14:30:55 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 14:30:55 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 14:30:55 serverb systemd[15423]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:30:55 serverb systemd[15423]: Reached target Paths.
+May 22 14:30:55 serverb systemd[15423]: Reached target Timers.
+May 22 14:30:55 serverb systemd[15423]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:30:55 serverb systemd[15423]: Starting D-Bus User Message Bus Socket.
+May 22 14:30:55 serverb systemd[15423]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:30:55 serverb systemd[15423]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 14:30:55 serverb systemd[15423]: Listening on GnuPG network certificate management daemon.
+May 22 14:30:55 serverb systemd[15423]: Listening on D-Bus User Message Bus Socket.
+May 22 14:30:55 serverb systemd[15423]: Reached target Sockets.
+May 22 14:30:55 serverb systemd[15423]: Reached target Basic System.
+May 22 14:30:55 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 14:30:55 serverb systemd[1]: Started Session 1184 of user curso.
+May 22 14:30:55 serverb systemd[15423]: Reached target Default.
+May 22 14:30:55 serverb systemd[15423]: Startup finished in 30ms.
+May 22 14:30:56 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['mariadb-server'] autoclean=False install_recommends=None name=mariadb-server purge=False allow_unauthenticated=False state=absent upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:31:06 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['mariadb*'] autoclean=False install_recommends=None name=mariadb* purge=False allow_unauthenticated=False state=absent upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:31:08 serverb systemd[1]: Stopping MariaDB 10.3.39 database server...
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] /usr/sbin/mysqld (initiated by: unknown): Normal shutdown
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] InnoDB: FTS optimize thread exiting.
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] Event Scheduler: Purging the queue. 0 events
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] InnoDB: Starting shutdown...
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+May 22 14:31:08 serverb mysqld[8821]: 2024-05-22 14:31:08 0 [Note] InnoDB: Buffer pool(s) dump completed at 240522 14:31:08
+May 22 14:31:09 serverb mysqld[8821]: 2024-05-22 14:31:09 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+May 22 14:31:09 serverb mysqld[8821]: 2024-05-22 14:31:09 0 [Note] InnoDB: Shutdown completed; log sequence number 1625437; transaction id 21
+May 22 14:31:09 serverb mysqld[8821]: 2024-05-22 14:31:09 0 [Note] /usr/sbin/mysqld: Shutdown complete
+May 22 14:31:09 serverb systemd[1]: mariadb.service: Succeeded.
+May 22 14:31:09 serverb systemd[1]: Stopped MariaDB 10.3.39 database server.
+May 22 14:31:10 serverb systemd[1]: Reloading.
+May 22 14:31:47 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:31:48 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['http'] autoclean=False install_recommends=None name=http purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:32:48 serverb systemd[1]: session-1184.scope: Succeeded.
+May 22 14:32:56 serverb systemd[1]: Started Session 1186 of user curso.
+May 22 14:32:56 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:32:57 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['http'] autoclean=False install_recommends=None name=http purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:33:57 serverb systemd[1]: session-1186.scope: Succeeded.
+May 22 14:34:07 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 14:34:07 serverb systemd[15423]: Stopped target Default.
+May 22 14:34:07 serverb systemd[15423]: Stopped target Basic System.
+May 22 14:34:07 serverb systemd[15423]: Stopped target Timers.
+May 22 14:34:07 serverb systemd[15423]: Stopped target Paths.
+May 22 14:34:07 serverb systemd[15423]: Stopped target Sockets.
+May 22 14:34:07 serverb systemd[15423]: gpg-agent-ssh.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:34:07 serverb systemd[15423]: gpg-agent.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 14:34:07 serverb systemd[15423]: dbus.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed D-Bus User Message Bus Socket.
+May 22 14:34:07 serverb systemd[15423]: gpg-agent-extra.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:34:07 serverb systemd[15423]: dirmngr.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed GnuPG network certificate management daemon.
+May 22 14:34:07 serverb systemd[15423]: gpg-agent-browser.socket: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:34:07 serverb systemd[15423]: Reached target Shutdown.
+May 22 14:34:07 serverb systemd[15423]: systemd-exit.service: Succeeded.
+May 22 14:34:07 serverb systemd[15423]: Started Exit the Session.
+May 22 14:34:07 serverb systemd[15423]: Reached target Exit the Session.
+May 22 14:34:07 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 14:34:07 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 14:34:07 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 14:34:07 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 14:34:07 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 14:34:07 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 14:34:07 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 14:35:01 serverb CRON[15771]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:35:56 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 14:35:56 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 14:35:56 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 14:35:56 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 14:35:56 serverb systemd[15777]: Listening on GnuPG network certificate management daemon.
+May 22 14:35:56 serverb systemd[15777]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 14:35:56 serverb systemd[15777]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:35:56 serverb systemd[15777]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:35:56 serverb systemd[15777]: Reached target Paths.
+May 22 14:35:56 serverb systemd[15777]: Reached target Timers.
+May 22 14:35:56 serverb systemd[15777]: Starting D-Bus User Message Bus Socket.
+May 22 14:35:56 serverb systemd[15777]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:35:56 serverb systemd[15777]: Listening on D-Bus User Message Bus Socket.
+May 22 14:35:56 serverb systemd[15777]: Reached target Sockets.
+May 22 14:35:56 serverb systemd[15777]: Reached target Basic System.
+May 22 14:35:56 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 14:35:56 serverb systemd[1]: Started Session 1188 of user curso.
+May 22 14:35:56 serverb systemd[15777]: Reached target Default.
+May 22 14:35:56 serverb systemd[15777]: Startup finished in 29ms.
+May 22 14:35:57 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:35:57 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:35:58 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['http'] autoclean=False install_recommends=None name=http purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:35:58 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:35:58 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['mariadb-server'] autoclean=False install_recommends=None name=mariadb-server purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:36:06 serverb systemd[1]: Reloading.
+May 22 14:36:06 serverb systemd[1]: Reloading.
+May 22 14:36:06 serverb systemd[1]: Starting MariaDB 10.3.39 database server...
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] Starting MariaDB 10.3.39-MariaDB-0+deb10u2 source revision ca001cf2048f0152689e1895e2dc15486dd0b1af as process 16201
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Using Linux native AIO
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Uses event mutexes
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Number of pools: 1
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Using SSE2 crc32 instructions
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Completed initialization of buffer pool
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Waiting for purge to start
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: 10.3.39 started; log sequence number 1625446; transaction id 20
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] InnoDB: Buffer pool(s) load completed at 240522 14:36:06
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] Plugin 'FEEDBACK' is disabled.
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] Server socket created on IP: '::'.
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] Reading of all Master_info entries succeeded
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] Added new Master_info '' to hash table
+May 22 14:36:06 serverb mysqld[16201]: 2024-05-22 14:36:06 0 [Note] /usr/sbin/mysqld: ready for connections.
+May 22 14:36:06 serverb mysqld[16201]: Version: '10.3.39-MariaDB-0+deb10u2'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Debian 10
+May 22 14:36:06 serverb systemd[1]: Started MariaDB 10.3.39 database server.
+May 22 14:36:06 serverb /etc/mysql/debian-start[16236]: Upgrading MySQL tables if necessary.
+May 22 14:36:06 serverb /etc/mysql/debian-start[16239]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+May 22 14:36:06 serverb /etc/mysql/debian-start[16239]: Looking for 'mysql' as: /usr/bin/mysql
+May 22 14:36:06 serverb /etc/mysql/debian-start[16239]: Reading datadir from the MariaDB server failed. Got the following error when executing the 'mysql' command line client
+May 22 14:36:06 serverb /etc/mysql/debian-start[16239]: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+May 22 14:36:06 serverb /etc/mysql/debian-start[16239]: FATAL ERROR: Upgrade failed
+May 22 14:36:06 serverb /etc/mysql/debian-start[16244]: Checking for insecure root accounts.
+May 22 14:36:06 serverb debian-start[16234]: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+May 22 14:36:06 serverb systemd[1]: Reloading.
+May 22 14:36:07 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 14:37:07 serverb systemd[1]: session-1188.scope: Succeeded.
+May 22 14:37:18 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 14:37:18 serverb systemd[15777]: Stopped target Default.
+May 22 14:37:18 serverb systemd[15777]: Stopped target Basic System.
+May 22 14:37:18 serverb systemd[15777]: Stopped target Paths.
+May 22 14:37:18 serverb systemd[15777]: Stopped target Sockets.
+May 22 14:37:18 serverb systemd[15777]: gpg-agent-browser.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:37:18 serverb systemd[15777]: dirmngr.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed GnuPG network certificate management daemon.
+May 22 14:37:18 serverb systemd[15777]: gpg-agent-ssh.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:37:18 serverb systemd[15777]: gpg-agent-extra.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:37:18 serverb systemd[15777]: dbus.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed D-Bus User Message Bus Socket.
+May 22 14:37:18 serverb systemd[15777]: Stopped target Timers.
+May 22 14:37:18 serverb systemd[15777]: gpg-agent.socket: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 14:37:18 serverb systemd[15777]: Reached target Shutdown.
+May 22 14:37:18 serverb systemd[15777]: systemd-exit.service: Succeeded.
+May 22 14:37:18 serverb systemd[15777]: Started Exit the Session.
+May 22 14:37:18 serverb systemd[15777]: Reached target Exit the Session.
+May 22 14:37:18 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 14:37:18 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 14:37:18 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 14:37:18 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 14:37:18 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 14:37:18 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 14:37:18 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 14:39:01 serverb CRON[16376]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 14:39:01 serverb systemd[1]: Starting Clean php session files...
+May 22 14:39:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 14:39:01 serverb systemd[1]: Started Clean php session files.
+May 22 14:45:01 serverb CRON[16430]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 14:51:47 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 14:51:47 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 14:51:47 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 14:51:47 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 14:51:47 serverb systemd[16443]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:51:47 serverb systemd[16443]: Reached target Timers.
+May 22 14:51:47 serverb systemd[16443]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:51:47 serverb systemd[16443]: Reached target Paths.
+May 22 14:51:47 serverb systemd[16443]: Starting D-Bus User Message Bus Socket.
+May 22 14:51:47 serverb systemd[16443]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:51:47 serverb systemd[16443]: Listening on GnuPG network certificate management daemon.
+May 22 14:51:47 serverb systemd[16443]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 14:51:47 serverb systemd[16443]: Listening on D-Bus User Message Bus Socket.
+May 22 14:51:47 serverb systemd[16443]: Reached target Sockets.
+May 22 14:51:47 serverb systemd[16443]: Reached target Basic System.
+May 22 14:51:47 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 14:51:47 serverb systemd[1]: Started Session 1192 of user curso.
+May 22 14:51:47 serverb systemd[16443]: Reached target Default.
+May 22 14:51:47 serverb systemd[16443]: Startup finished in 29ms.
+May 22 14:51:47 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:51:48 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:51:48 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:51:49 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 14:52:06 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=absent upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:52:07 serverb systemd[1]: Reloading.
+May 22 14:52:07 serverb systemd[1]: Reloading.
+May 22 14:52:07 serverb systemd[1]: Stopping The Apache HTTP Server...
+May 22 14:52:07 serverb systemd[1]: apache2.service: Succeeded.
+May 22 14:52:07 serverb systemd[1]: Stopped The Apache HTTP Server.
+May 22 14:52:08 serverb systemd[1]: Reloading.
+May 22 14:52:08 serverb systemd[1]: Reloading.
+May 22 14:52:11 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:52:12 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 14:52:12 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 14:52:15 serverb systemd[1]: Reloading.
+May 22 14:52:15 serverb systemd[1]: Reloading.
+May 22 14:52:15 serverb systemd[1]: Reloading.
+May 22 14:52:15 serverb systemd[1]: Reloading.
+May 22 14:52:15 serverb systemd[1]: Starting The Apache HTTP Server...
+May 22 14:52:16 serverb systemd[1]: Started The Apache HTTP Server.
+May 22 14:52:16 serverb systemd[1]: Reloading.
+May 22 14:52:16 serverb systemd[1]: Reloading.
+May 22 14:52:17 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 14:53:17 serverb systemd[1]: session-1192.scope: Succeeded.
+May 22 14:53:27 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 14:53:27 serverb systemd[16443]: Stopped target Default.
+May 22 14:53:27 serverb systemd[16443]: Stopped target Basic System.
+May 22 14:53:27 serverb systemd[16443]: Stopped target Sockets.
+May 22 14:53:27 serverb systemd[16443]: gpg-agent-browser.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 14:53:27 serverb systemd[16443]: gpg-agent.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 14:53:27 serverb systemd[16443]: dbus.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed D-Bus User Message Bus Socket.
+May 22 14:53:27 serverb systemd[16443]: gpg-agent-extra.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 14:53:27 serverb systemd[16443]: Stopped target Timers.
+May 22 14:53:27 serverb systemd[16443]: Stopped target Paths.
+May 22 14:53:27 serverb systemd[16443]: dirmngr.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed GnuPG network certificate management daemon.
+May 22 14:53:27 serverb systemd[16443]: gpg-agent-ssh.socket: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 14:53:27 serverb systemd[16443]: Reached target Shutdown.
+May 22 14:53:27 serverb systemd[16443]: systemd-exit.service: Succeeded.
+May 22 14:53:27 serverb systemd[16443]: Started Exit the Session.
+May 22 14:53:27 serverb systemd[16443]: Reached target Exit the Session.
+May 22 14:53:27 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 14:53:27 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 14:53:27 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 14:53:27 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 14:53:27 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 14:53:27 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 14:53:27 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 14:55:01 serverb CRON[17231]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 15:00:57 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 15:00:57 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 15:00:57 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 15:00:57 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 15:00:57 serverb systemd[17243]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:00:57 serverb systemd[17243]: Reached target Timers.
+May 22 15:00:57 serverb systemd[17243]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:00:57 serverb systemd[17243]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 15:00:57 serverb systemd[17243]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:00:57 serverb systemd[17243]: Listening on GnuPG network certificate management daemon.
+May 22 15:00:57 serverb systemd[17243]: Starting D-Bus User Message Bus Socket.
+May 22 15:00:57 serverb systemd[17243]: Reached target Paths.
+May 22 15:00:57 serverb systemd[17243]: Listening on D-Bus User Message Bus Socket.
+May 22 15:00:57 serverb systemd[17243]: Reached target Sockets.
+May 22 15:00:57 serverb systemd[17243]: Reached target Basic System.
+May 22 15:00:57 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 15:00:57 serverb systemd[1]: Started Session 1195 of user curso.
+May 22 15:00:57 serverb systemd[17243]: Reached target Default.
+May 22 15:00:57 serverb systemd[17243]: Startup finished in 28ms.
+May 22 15:00:58 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:00:58 serverb ansible-command: Invoked with creates=None executable=None _uses_shell=False strip_empty_ends=True _raw_params=date removes=None argv=None warn=True chdir=None stdin_add_newline=True stdin=None
+May 22 15:00:58 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:00:59 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 15:00:59 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 15:01:59 serverb systemd[1]: session-1195.scope: Succeeded.
+May 22 15:02:10 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 15:02:10 serverb systemd[17243]: Stopped target Default.
+May 22 15:02:10 serverb systemd[17243]: Stopped target Basic System.
+May 22 15:02:10 serverb systemd[17243]: Stopped target Timers.
+May 22 15:02:10 serverb systemd[17243]: Stopped target Sockets.
+May 22 15:02:10 serverb systemd[17243]: gpg-agent-browser.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:02:10 serverb systemd[17243]: dbus.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed D-Bus User Message Bus Socket.
+May 22 15:02:10 serverb systemd[17243]: gpg-agent-extra.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:02:10 serverb systemd[17243]: gpg-agent-ssh.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:02:10 serverb systemd[17243]: dirmngr.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed GnuPG network certificate management daemon.
+May 22 15:02:10 serverb systemd[17243]: Stopped target Paths.
+May 22 15:02:10 serverb systemd[17243]: gpg-agent.socket: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 15:02:10 serverb systemd[17243]: Reached target Shutdown.
+May 22 15:02:10 serverb systemd[17243]: systemd-exit.service: Succeeded.
+May 22 15:02:10 serverb systemd[17243]: Started Exit the Session.
+May 22 15:02:10 serverb systemd[17243]: Reached target Exit the Session.
+May 22 15:02:10 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 15:02:10 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 15:02:10 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 15:02:10 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 15:02:10 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 15:02:10 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 15:02:10 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 15:04:32 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 15:04:32 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 15:04:32 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 15:04:32 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 15:04:32 serverb systemd[17407]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 15:04:32 serverb systemd[17407]: Starting D-Bus User Message Bus Socket.
+May 22 15:04:32 serverb systemd[17407]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:04:32 serverb systemd[17407]: Reached target Timers.
+May 22 15:04:32 serverb systemd[17407]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:04:32 serverb systemd[17407]: Listening on GnuPG network certificate management daemon.
+May 22 15:04:32 serverb systemd[17407]: Reached target Paths.
+May 22 15:04:32 serverb systemd[17407]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:04:32 serverb systemd[17407]: Listening on D-Bus User Message Bus Socket.
+May 22 15:04:32 serverb systemd[17407]: Reached target Sockets.
+May 22 15:04:32 serverb systemd[17407]: Reached target Basic System.
+May 22 15:04:32 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 15:04:32 serverb systemd[1]: Started Session 1197 of user curso.
+May 22 15:04:32 serverb systemd[17407]: Reached target Default.
+May 22 15:04:32 serverb systemd[17407]: Startup finished in 27ms.
+May 22 15:04:32 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:04:33 serverb ansible-command: Invoked with creates=None executable=None _uses_shell=False strip_empty_ends=True _raw_params=date removes=None argv=None warn=True chdir=None stdin_add_newline=True stdin=None
+May 22 15:04:33 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:04:33 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 15:04:34 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 15:05:01 serverb CRON[17565]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 15:05:34 serverb systemd[1]: session-1197.scope: Succeeded.
+May 22 15:05:44 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 15:05:44 serverb systemd[17407]: Stopped target Default.
+May 22 15:05:44 serverb systemd[17407]: Stopped target Basic System.
+May 22 15:05:44 serverb systemd[17407]: Stopped target Timers.
+May 22 15:05:44 serverb systemd[17407]: Stopped target Sockets.
+May 22 15:05:44 serverb systemd[17407]: gpg-agent.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 15:05:44 serverb systemd[17407]: dirmngr.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed GnuPG network certificate management daemon.
+May 22 15:05:44 serverb systemd[17407]: gpg-agent-browser.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:05:44 serverb systemd[17407]: gpg-agent-ssh.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:05:44 serverb systemd[17407]: Stopped target Paths.
+May 22 15:05:44 serverb systemd[17407]: dbus.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed D-Bus User Message Bus Socket.
+May 22 15:05:44 serverb systemd[17407]: gpg-agent-extra.socket: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:05:44 serverb systemd[17407]: Reached target Shutdown.
+May 22 15:05:44 serverb systemd[17407]: systemd-exit.service: Succeeded.
+May 22 15:05:44 serverb systemd[17407]: Started Exit the Session.
+May 22 15:05:44 serverb systemd[17407]: Reached target Exit the Session.
+May 22 15:05:44 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 15:05:44 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 15:05:44 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 15:05:44 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 15:05:44 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 15:05:44 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 15:05:44 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 15:07:34 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 15:07:34 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 15:07:34 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 15:07:34 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 15:07:34 serverb systemd[17574]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:07:34 serverb systemd[17574]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:07:34 serverb systemd[17574]: Reached target Timers.
+May 22 15:07:34 serverb systemd[17574]: Listening on GnuPG network certificate management daemon.
+May 22 15:07:34 serverb systemd[17574]: Reached target Paths.
+May 22 15:07:34 serverb systemd[17574]: Starting D-Bus User Message Bus Socket.
+May 22 15:07:34 serverb systemd[17574]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:07:34 serverb systemd[17574]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 15:07:34 serverb systemd[17574]: Listening on D-Bus User Message Bus Socket.
+May 22 15:07:34 serverb systemd[17574]: Reached target Sockets.
+May 22 15:07:34 serverb systemd[17574]: Reached target Basic System.
+May 22 15:07:34 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 15:07:34 serverb systemd[1]: Started Session 1200 of user curso.
+May 22 15:07:34 serverb systemd[17574]: Reached target Default.
+May 22 15:07:34 serverb systemd[17574]: Startup finished in 28ms.
+May 22 15:07:34 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:07:35 serverb ansible-command: Invoked with creates=None executable=None _uses_shell=False strip_empty_ends=True _raw_params=date removes=None argv=None warn=True chdir=None stdin_add_newline=True stdin=None
+May 22 15:07:35 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:07:35 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['apache2'] autoclean=False install_recommends=None name=apache2 purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 15:07:36 serverb ansible-setup: Invoked with filter=ansible_pkg_mgr gather_subset=['!all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:07:36 serverb ansible-apt: Invoked with dpkg_options=force-confdef,force-confold autoremove=False force=False force_apt_get=False policy_rc_d=None package=['mariadb-server'] autoclean=False install_recommends=None name=mariadb-server purge=False allow_unauthenticated=False state=present upgrade=None update_cache=None default_release=None only_upgrade=False deb=None cache_valid_time=0
+May 22 15:07:37 serverb ansible-systemd: Invoked with no_block=False force=None name=mariadb daemon_reexec=False enabled=None daemon_reload=False state=started masked=None scope=None user=None
+May 22 15:08:37 serverb systemd[1]: session-1200.scope: Succeeded.
+May 22 15:08:47 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 15:08:47 serverb systemd[17574]: Stopped target Default.
+May 22 15:08:47 serverb systemd[17574]: Stopped target Basic System.
+May 22 15:08:47 serverb systemd[17574]: Stopped target Sockets.
+May 22 15:08:47 serverb systemd[17574]: dbus.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed D-Bus User Message Bus Socket.
+May 22 15:08:47 serverb systemd[17574]: dirmngr.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed GnuPG network certificate management daemon.
+May 22 15:08:47 serverb systemd[17574]: gpg-agent.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 15:08:47 serverb systemd[17574]: gpg-agent-extra.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:08:47 serverb systemd[17574]: gpg-agent-ssh.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:08:47 serverb systemd[17574]: Stopped target Paths.
+May 22 15:08:47 serverb systemd[17574]: Stopped target Timers.
+May 22 15:08:47 serverb systemd[17574]: gpg-agent-browser.socket: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:08:47 serverb systemd[17574]: Reached target Shutdown.
+May 22 15:08:47 serverb systemd[17574]: systemd-exit.service: Succeeded.
+May 22 15:08:47 serverb systemd[17574]: Started Exit the Session.
+May 22 15:08:47 serverb systemd[17574]: Reached target Exit the Session.
+May 22 15:08:47 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 15:08:47 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 15:08:47 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 15:08:47 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 15:08:47 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 15:08:47 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 15:08:47 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 15:09:01 serverb CRON[17778]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+May 22 15:09:01 serverb systemd[1]: Starting Clean php session files...
+May 22 15:09:01 serverb systemd[1]: phpsessionclean.service: Succeeded.
+May 22 15:09:01 serverb systemd[1]: Started Clean php session files.
+May 22 15:13:33 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 15:13:33 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 15:13:33 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 15:13:33 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 15:13:33 serverb systemd[17832]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:13:33 serverb systemd[17832]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:13:33 serverb systemd[17832]: Starting D-Bus User Message Bus Socket.
+May 22 15:13:33 serverb systemd[17832]: Listening on GnuPG network certificate management daemon.
+May 22 15:13:33 serverb systemd[17832]: Reached target Paths.
+May 22 15:13:33 serverb systemd[17832]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:13:33 serverb systemd[17832]: Reached target Timers.
+May 22 15:13:33 serverb systemd[17832]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 15:13:33 serverb systemd[17832]: Listening on D-Bus User Message Bus Socket.
+May 22 15:13:33 serverb systemd[17832]: Reached target Sockets.
+May 22 15:13:33 serverb systemd[17832]: Reached target Basic System.
+May 22 15:13:33 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 15:13:33 serverb systemd[1]: Started Session 1203 of user curso.
+May 22 15:13:33 serverb systemd[17832]: Reached target Default.
+May 22 15:13:33 serverb systemd[17832]: Startup finished in 28ms.
+May 22 15:13:34 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:13:34 serverb ansible-slurp: Invoked with src=/var/log/secure
+May 22 15:14:34 serverb systemd[1]: session-1203.scope: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Stopped target Default.
+May 22 15:14:44 serverb systemd[1]: Stopping User Manager for UID 1000...
+May 22 15:14:44 serverb systemd[17832]: Stopped target Basic System.
+May 22 15:14:44 serverb systemd[17832]: Stopped target Sockets.
+May 22 15:14:44 serverb systemd[17832]: dirmngr.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed GnuPG network certificate management daemon.
+May 22 15:14:44 serverb systemd[17832]: gpg-agent-extra.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:14:44 serverb systemd[17832]: gpg-agent.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed GnuPG cryptographic agent and passphrase cache.
+May 22 15:14:44 serverb systemd[17832]: dbus.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed D-Bus User Message Bus Socket.
+May 22 15:14:44 serverb systemd[17832]: gpg-agent-browser.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:14:44 serverb systemd[17832]: gpg-agent-ssh.socket: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Closed GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:14:44 serverb systemd[17832]: Stopped target Timers.
+May 22 15:14:44 serverb systemd[17832]: Stopped target Paths.
+May 22 15:14:44 serverb systemd[17832]: Reached target Shutdown.
+May 22 15:14:44 serverb systemd[17832]: systemd-exit.service: Succeeded.
+May 22 15:14:44 serverb systemd[17832]: Started Exit the Session.
+May 22 15:14:44 serverb systemd[17832]: Reached target Exit the Session.
+May 22 15:14:44 serverb systemd[1]: user@1000.service: Succeeded.
+May 22 15:14:44 serverb systemd[1]: Stopped User Manager for UID 1000.
+May 22 15:14:44 serverb systemd[1]: Stopping User Runtime Directory /run/user/1000...
+May 22 15:14:44 serverb systemd[1]: run-user-1000.mount: Succeeded.
+May 22 15:14:44 serverb systemd[1]: user-runtime-dir@1000.service: Succeeded.
+May 22 15:14:44 serverb systemd[1]: Stopped User Runtime Directory /run/user/1000.
+May 22 15:14:44 serverb systemd[1]: Removed slice User Slice of UID 1000.
+May 22 15:14:51 serverb systemd[1]: Created slice User Slice of UID 1000.
+May 22 15:14:51 serverb systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 22 15:14:51 serverb systemd[1]: Started User Runtime Directory /run/user/1000.
+May 22 15:14:51 serverb systemd[1]: Starting User Manager for UID 1000...
+May 22 15:14:51 serverb systemd[17924]: Reached target Timers.
+May 22 15:14:51 serverb systemd[17924]: Starting D-Bus User Message Bus Socket.
+May 22 15:14:51 serverb systemd[17924]: Listening on GnuPG cryptographic agent and passphrase cache (access for web browsers).
+May 22 15:14:51 serverb systemd[17924]: Listening on GnuPG cryptographic agent and passphrase cache (restricted).
+May 22 15:14:51 serverb systemd[17924]: Listening on GnuPG cryptographic agent and passphrase cache.
+May 22 15:14:51 serverb systemd[17924]: Listening on GnuPG cryptographic agent (ssh-agent emulation).
+May 22 15:14:51 serverb systemd[17924]: Listening on GnuPG network certificate management daemon.
+May 22 15:14:51 serverb systemd[17924]: Reached target Paths.
+May 22 15:14:51 serverb systemd[17924]: Listening on D-Bus User Message Bus Socket.
+May 22 15:14:51 serverb systemd[17924]: Reached target Sockets.
+May 22 15:14:51 serverb systemd[17924]: Reached target Basic System.
+May 22 15:14:51 serverb systemd[1]: Started User Manager for UID 1000.
+May 22 15:14:51 serverb systemd[1]: Started Session 1205 of user curso.
+May 22 15:14:51 serverb systemd[17924]: Reached target Default.
+May 22 15:14:51 serverb systemd[17924]: Startup finished in 29ms.
+May 22 15:15:01 serverb CRON[17944]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+May 22 15:16:08 serverb systemd[1]: session-1205.scope: Succeeded.
+May 22 15:16:09 serverb systemd[1]: Started Session 1208 of user curso.
+May 22 15:16:10 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:16:10 serverb ansible-slurp: Invoked with src=/var/log/secure
+May 22 15:16:29 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:16:30 serverb ansible-slurp: Invoked with src=/var/log
+May 22 15:16:51 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:16:51 serverb ansible-slurp: Invoked with src=/var/log/
+May 22 15:17:01 serverb CRON[18176]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 22 15:17:39 serverb ansible-setup: Invoked with filter=* gather_subset=['all'] fact_path=/etc/ansible/facts.d gather_timeout=10
+May 22 15:17:40 serverb ansible-slurp: Invoked with src=/var/log/syslog

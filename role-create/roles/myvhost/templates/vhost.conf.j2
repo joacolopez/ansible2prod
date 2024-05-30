@@ -3,8 +3,8 @@
 <VirtualHost *:80>
     ServerAdmin webmaster@{{ ansible_fqdn }}
     ServerName {{ ansible_fqdn }}
-    ErrorLog logs/{{ ansible_hostname }}-error.log
-    CustomLog logs/{{ ansible_hostname }}-common.log common
+    ErrorLog ${APACHE_LOG_DIR}/{{ ansible_hostname }}-error.log
+    CustomLog ${APACHE_LOG_DIR}/{{ ansible_hostname }}-common.log common
     DocumentRoot /var/www/vhosts/{{ ansible_hostname }}/
 
     <Directory /var/www/vhosts/{{ ansible_hostname }}/>

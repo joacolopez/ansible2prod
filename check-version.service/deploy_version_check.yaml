@@ -1,0 +1,39 @@
+---
+- name: Deploy version check script
+  hosts: wst
+  become: yes
+  vars:
+    version_script_source: files/check_version.sh
+    version_script_dest: /usr/local/bin/check_version.sh
+    systemd_service_source: files/check_version.service
+    systemd_service_dest: /etc/systemd/system/check-version.service
+    version_server_url: "http://serverb.lab.example.com/control_version"
+
+  tasks:
+    - name: Ensure zenity is installed
+      apt:
+        name: zenity
+        state: present
+
+    - name: Ensure curl is installed
+      apt:
+        name: curl
+        state: present
+
+    - name: Copy the version check script to /usr/local/bin
+      copy:
+        src: "{{ version_script_source }}"
+        dest: "{{ version_script_dest }}"
+        mode: '0755'
+
+    - name: Copy systemd service to /etc/systemd/system
+      copy:
+        src: "{{ systemd_service_source }}"
+        dest: "{{ systemd_service_dest }}"
+        mode: '0644'
+     
+    - name: Reload systemd to recognize the new service
+      command: systemctl daemon-reload
+
+    - name: Enable the systemd service for all users
+      command: systemctl enable check-version.service

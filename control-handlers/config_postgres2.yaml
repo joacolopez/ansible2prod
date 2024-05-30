@@ -1,0 +1,58 @@
+---
+- name: Install PostgreSQL server
+  hosts: databases
+  become: yes
+  vars:
+    db_packages:
+      - python3-psycopg2
+      - postgresql
+    db_service:
+      - postgresql
+    db_name: postgres
+    db_user: postgres
+    db_password: secret
+    postgres_password: credicoop
+
+  tasks:
+    - name: Set ansible_python_interpreter to /usr/bin/python3
+      set_fact:
+        ansible_python_interpreter: /usr/bin/python3
+  
+    - name: Install PostgreSQL necessary packages
+      apt:
+        name: "{{ db_packages }}"
+        state: present
+
+    - name: Enable password authentication for postgres user
+      lineinfile:
+        path: /etc/postgresql/11/main/postgresql.conf
+        regexp: ^#?\s*password_encryption
+        line: password_encryption = md5
+      notify: Restart PostgreSQL
+
+    - name: Configure PostgreSQL authentication
+      lineinfile:
+        path: /etc/postgresql/11/main/pg_hba.conf
+        regexp: ^local\s+all\s+postgres
+        line: local all postgres md5
+      notify: Restart PostgreSQL
+
+    - name: Set password for postgres user
+      shell: echo "ALTER USER postgres WITH PASSWORD '{{ postgres_password }}';" | sudo -u postgres psql
+      ignore_errors: yes
+
+    - name: Create PostgreSQL database
+      postgresql_db:
+        name: "{{ db_name }}"
+
+    - name: Create PostgreSQL user
+      postgresql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        role_attr_flags: CREATEDB
+
+  handlers:
+    - name: Restart PostgreSQL
+      service:
+        name: "{{ db_service }}"
+        state: restarted

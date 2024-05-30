@@ -1,0 +1,19 @@
+---
+- name: MariaDB server is runing
+  hosts: database_prod
+  vars:
+    mariadb_packages:
+      - mariadb-server
+  tasks:
+    - name: MariaDB packages are installed
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ mariadb_packages }}"
+      when: ansible_distribution == "Debian"
+
+    - name: Start MariaDB service
+      service: 
+        name: mariadb
+        state: started
+        enabled: true  

@@ -1,0 +1,13 @@
+[Unit]
+Description=Verificar versión al inicio de sesión gráfica para todos los usuarios
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/check_version.sh http://serverb.lab.example.com/control_version
+Environment=DISPLAY=:0
+EnvironmentFile=-/etc/environment
+User=%I
+
+[Install]
+WantedBy=default.target

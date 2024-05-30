@@ -1,0 +1,17 @@
+---
+- name: Actualizar archivo de versión
+  hosts: wst
+  become: true  
+
+  tasks:
+   - name: Ensure wget is installed
+     apt:
+       name: wget
+       state: present
+
+   - name: Descargar archivo desde el servidor para actualizar versión
+     get_url:
+       url: "{{ version_server_url }}"  # URL del archivo en el servidor remoto
+       dest: "{{ wst_version_file }}"  # Ruta donde se guardará el archivo en el host remoto
+       mode: '0644'  # Permisos del archivo descargado
+       

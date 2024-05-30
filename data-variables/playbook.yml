@@ -1,0 +1,51 @@
+---
+- name: Deploy and start Apache apache2 service
+  hosts: webserver
+  vars:
+    web_pkg: apache2
+    firewall_pkg: ufw
+    web_service: apache2
+    firewall_service: ufw
+    rule: http
+    comment_ufw: "Allow HTTP traffic"
+  
+  tasks:
+    - name: Required packages are installed and up to date
+      yum:
+        name:
+          - "{{ web_pkg }}"
+          - "{{ firewall_pkg }}"
+        state: latest
+
+    - name: The {{ firewall_service }} service is started and enabled
+      service:
+        name: "{{ firewall_service }}"
+        enabled: true
+        state: started
+     
+    - name: The {{ web_service }} service is started and enabled
+      service:
+        name: "{{ web_service }}"
+        enabled: true
+        state: started
+
+    - name: Web content is in place
+      copy:
+        content: "Example web content"
+        dest: /var/www/html/index.html
+
+    - name: The firewall port for {{ rule }} is open
+      ufw:
+       port: "{{ rule }}"
+       rule: allow
+       comment: "{{ comment_ufw }}"
+       state: enabled
+
+- name: Verify the Apache service
+  hosts: localhost
+  become: false
+  tasks:
+    - name: Ensure the webserver is reachable
+      uri:
+        url: http://serverc.lab.example.com
+        status_code: 200

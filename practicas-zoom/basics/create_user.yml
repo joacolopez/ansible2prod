@@ -1,0 +1,29 @@
+---
+# Playbook to manage users and groups
+# This playbook will:
+# 1. Create a group named 'devops'
+# 2. Create a user 'jdoe' with UID 1040 and add to the 'devops' group
+# 3. Set the password for 'jdoe' to 'password'
+# 4. Ensure the user's shell is set to Bash
+
+- name: Manage users and groups
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create a group
+      group:
+        name: devops
+
+    - name: Create a user
+      user:
+        name: jdoe
+        comment: "John Doe"
+        uid: 1040
+        group: devops
+        shell: /bin/bash
+        state: present
+
+    - name: Set password for the user
+      user:
+        name: jdoe
+        password: "{{ 'password' | password_hash('sha512') }}"

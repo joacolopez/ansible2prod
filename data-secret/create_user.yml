@@ -1,0 +1,13 @@
+---
+- name: create user account for all our server
+  hosts: devservers
+  become: True
+  remote_user: curso
+  vars_files:
+    - secret.yml
+  tasks:
+    - name : Creating user from secret.yml
+      user: 
+        name: "{{ username }}"
+        password: "{{ pwhash }}"
+

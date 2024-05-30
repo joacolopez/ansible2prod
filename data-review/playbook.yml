@@ -1,0 +1,129 @@
+---
+- name: install and configure webserver with basic auth
+  hosts: webserver2
+  become: yes
+  vars:
+    firewall_pkg: ufw
+    firewall_svc: ufw
+    web_pkg: apache2
+    web_svc: apache2
+    apacheconf_src: files/apache2.conf
+    apacheconf_dest: /etc/apache2/apache2.conf 
+    htaccess_src: files/.htaccess  
+    secrets_dir: /etc/apache2/  
+    secrets_src: files/htpasswd  
+    secrets_dest: "{{ secrets_dir }}/htpasswd"
+    web_root: /var/www/html
+  tasks:
+    - name: Latest version of neccesarry packages installed
+      yum:
+        name:
+          - "{{ firewall_pkg }}"
+          - "{{ web_pkg }}"
+          # no hace falta el paquete ssl, en debian está incluido con apache
+        state: latest
+
+    - name: Configure web server
+      copy:
+        src: "{{ apacheconf_src }}"
+        dest: "{{ apacheconf_dest }}"
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Secrets directory exists
+      file:
+        path: "{{ secrets_dir }}"
+        owner: www-data # en debian apache utiliza el usuario www-data y no apache como en rhel
+        group: www-data
+        mode: 0500
+
+    - name: htpasswd file exists
+      copy:
+        src: "{{ secrets_src }}"
+        dest: "{{ secrets_dest }}"
+        owner: www-data
+        group: www-data
+        mode: 0400
+
+    - name: .htaccess file installed in docroot
+      copy:
+        src: "{{ htaccess_src }}"
+        dest: "{{ web_root }}/.htaccess"
+        owner: www-data
+        group: www-data
+        mode: 0400
+
+    - name: Create index.html
+      copy:
+        content: "{{ ansible_facts['fqdn'] }} ({{ ansible_facts['default_ipv4']['address'] }}) has been customized by Ansible.\n"
+        dest: "{{ web_root }}/index.html"
+
+    - name: Firewall service enabled and started
+      service:
+        name: "{{ firewall_svc }}"
+        state: started
+        enabled: true
+
+    - name: Open the port for the web server
+      ufw:
+        rule: allow
+        port: https
+        comment: "Allow HTTPS traffic"
+    
+    - name: Enable apache ssl module
+      command: a2enmod ssl
+      args:
+        creates: /etc/apache2/mods-enabled/ssl.conf
+    
+    - name: Check if default SSL site is enabled
+      stat:
+        path: /etc/apache2/sites-enabled/default-ssl.conf
+      register: ssl_site_status
+
+    - name: Enable default SSL site in Apache if not already enabled
+      command: a2ensite default-ssl
+      args:
+        creates: /etc/apache2/sites-enabled/default-ssl.conf
+      when: not ssl_site_status.stat.exists
+
+    - name: Disable SSLv3 in ssl.conf for Apache
+      lineinfile:
+        path: /etc/apache2/mods-available/ssl.conf
+        regexp: '^SSLProtocol.*'
+        line: 'SSLProtocol -ALL +TLSv1 +TLSv1.1 +TLSv1.2'
+        backup: yes
+
+    - name: Restart apache web service
+      service:
+        name: "{{ web_svc }}"
+        state: restarted
+    
+    - name: Web service enabled and started
+      service:
+        name: "{{ web_svc }}"
+        state: started
+        enabled: true
+
+- name: Test web server with basic auth
+  hosts: localhost
+  become: no
+  vars:
+    web_user: guest
+  vars_files:
+    - vars/secret.yml
+  tasks:
+
+    - name: Connect to the web server with basic auth
+      uri: 
+        url: https://serverb.lab.example.com
+        validate_certs: no
+        force_basic_auth: yes
+        user: "{{ web_user }}"
+        password: "{{ web_pass }}"
+        return_content: yes
+        status_code: 200
+      register: auth_test
+
+    - debug:
+        var: auth_test.content

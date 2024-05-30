@@ -1,0 +1,8 @@
+---
+# defaults file for webserver
+web_packages:
+  - nginx
+  - curl
+nginx_config_file: /etc/nginx/nginx.conf
+index_file: /var/www/html/index.html
+nginx_backup_dir: /var/backups/nginx

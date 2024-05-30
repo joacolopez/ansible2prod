@@ -1,0 +1,59 @@
+---
+- name: Install and configure Nginx
+  hosts: web_server
+  become: yes
+  vars:
+    web_root: /var/www/html
+    index_file: index.html
+    web_sv_pkg: nginx
+    web_sv_svc: nginx
+    nginx_default_site: /etc/nginx/sites-enabled/default
+    nginx_enabled_site: /etc/nginx/sites-enabled/sitio_practica
+    nginx_cnf_dest: /etc/nginx/sites-available/sitio_practica
+
+  tasks:
+    - name: Install {{ web_sv_pkg }}
+      apt:
+        name: "{{ web_sv_pkg }}"
+        state: present
+
+    - name: Ensure {{ web_sv_svc }} is enabled and started
+      service:
+        name: "{{ web_sv_svc }}"
+        state: started
+        enabled: true
+
+    - name: Get index.html file from external source and copy to server
+      get_url:
+        url: "https://raw.githubusercontent.com/joacolopez/ansible2prod/main/zoom-clase4-nginx/files/index.html"
+        dest: "{{ web_root }}/{{ index_file }}"
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Remove default Nginx site configuration
+      file:
+        path: "{{ nginx_default_site }}"
+        state: absent
+
+    - name: Get basic Nginx site configuration from external source
+      get_url:
+        url: "https://raw.githubusercontent.com/joacolopez/ansible2prod/main/zoom-clase4-nginx/files/sitio.template"
+        dest: "{{ nginx_cnf_dest }}"
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Enable the Nginx site configuratio:q!n
+      file:
+        src: "{{ nginx_cnf_dest }}"
+        dest: "{{ nginx_enabled_site }}"
+        state: link
+
+    - name: Test Nginx configuration
+      command: nginx -t
+
+    - name: Reload Nginx to apply changes
+      service:
+        name: "{{ web_sv_svc }}"
+        state: reloaded

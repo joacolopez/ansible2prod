@@ -1,0 +1,4 @@
+---
+# vars file for webserver
+nginx_port: 80
+welcome_message: "Esta pagina web fue automaticamente generada desde Ansible"

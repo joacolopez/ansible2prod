@@ -1,5 +1,4 @@
-AuthUserFile /etc/httpd/secrets/htpasswd
-AuthGroupFile /dev/null
+AuthUserFile /etc/apache2/htpasswd
 AuthName "Please Enter Password"
 AuthType Basic
 Require valid-user

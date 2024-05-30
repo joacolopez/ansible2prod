@@ -1,0 +1,29 @@
+---
+- name: Configure web server
+  hosts: serverb.lab.example.com
+  tasks:
+    - name: Include the enviroment task file adn se the variables
+      include_tasks: tasks/environment.yml
+      vars:
+        package: apache2 
+        service: apache2
+      when: ansible_facts['os_family'] == 'Debian'
+    
+    - name: Import the firewall task file adn set the variables
+      import_tasks: tasks/firewall.yml
+      vars:
+        firewall_pkg: ufw
+        firewall_svc: ufw
+        rule:
+          - http
+          - https
+    
+    - name: Import the placeholder task file adn se the variable
+      import_tasks: tasks/placeholder.yml
+      vars:
+        file: /var/www/html/index.hmlt
+      
+- name: Import test file and set the variable
+  import_playbook: plays/test.yml
+  vars:
+    url: 'http://serverb.lab.example.com'

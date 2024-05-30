@@ -1,2 +1,5 @@
 [webserver]
 serverb.lab.example.com
+
+[webserver2]
+serverd.lab.example.com

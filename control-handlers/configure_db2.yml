@@ -1,0 +1,42 @@
+---
+- name: Instalar servidor MariaDB
+  hosts: databases
+  vars:
+    db_packages:
+      - mariadb-server
+    db_service: mariadb
+    resources_url: "https://raw.githubusercontent.com/joacolopez/ansible2prod/main/control-handlers/"
+    config_file_url: "{{ resources_url }}/my.cnf.standard"
+    config_file_dst: /etc/mysql/my.cnf
+  tasks:
+    - name: Instalar paquetes {{ db_packages }}
+      apt:
+        name: "{{ db_packages }}"
+        state: present
+      notify:
+        - Establecer contraseña de la base de datos
+    - name: Asegurarse de que el servicio de base de datos esté en ejecución
+      service:
+        name: "{{ db_service }}"
+        state: started
+        enabled: true
+    - name: Instalar el archivo {{ config_file_dst }}
+      get_url:
+        url: "{{ config_file_url }}"
+        dest: "{{ config_file_dst }}"
+        owner: mysql
+        group: mysql
+        mode: 0644
+      notify:
+        - Reiniciar servicio de la base de datos
+  handlers:
+    - name: Reiniciar servicio de la base de datos
+      service:
+        name: "{{ db_service }}"
+        state: restarted
+    - name: Establecer contraseña de la base de datos
+      mysql_user:
+        name: root
+        password: debian
+        login_user: root
+        login_password: redhat

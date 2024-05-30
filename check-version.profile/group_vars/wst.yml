@@ -1,0 +1,6 @@
+version_script_source: files/check_version.sh
+version_script_dest: /usr/local/bin/check_version.sh
+profile_script_dest: /etc/profile.d/check_version.sh
+version_server_url: "http://serverb.lab.example.com/control_version"
+wst_version_file: /opt/wst-version.log
+wst_version_upd: "1.3"
