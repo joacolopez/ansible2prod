@@ -1,6 +1,6 @@
 ---
 - name: Manejo de fallas de tareas
-  hosts: databases
+  hosts: awx_lab
   vars:
     web_package: apache2
     db_package: mariadb-server
