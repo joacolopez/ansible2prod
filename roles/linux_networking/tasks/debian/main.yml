@@ -1,0 +1,25 @@
+---
+
+# todo: check if bug that debian reset's to dhcp before after-config-reboot is a role-issue
+
+- name: Network | Configuring startup-service
+  ansible.builtin.import_tasks: startup.yml
+  when: NW.startup_service.enable | bool
+  tags: [routing, interfaces]
+
+- name: Network | Configuring network interfaces
+  ansible.builtin.import_tasks: interfaces.yml
+  tags: interfaces
+  when:
+    - NW.interfaces is defined
+    - NW.interfaces | length > 0
+
+- name: Network | Applying network config via validator
+  ansible.builtin.import_tasks: validation.yml
+  when: NW.validation.enable | bool
+  tags: [routing, interfaces, base]
+
+- name: Network | Applying network config w/o validation
+  ansible.builtin.import_tasks: apply.yml
+  when: not NW.validation.enable | bool
+  tags: [routing, interfaces, base]

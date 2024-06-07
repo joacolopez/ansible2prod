@@ -1,0 +1,105 @@
+---
+
+defaults_ne:
+  support:
+    vlan: false
+    bridge: false
+    bonding: false
+    traffic_forwarding: false  # if the server should act as a router (per example vpn-gateway)
+    ipv6: true
+
+  install_tools: true
+  tools:
+    - 'iftop'
+    - 'net-tools'
+    - 'dnsutils'
+    - 'iproute2'
+
+  interfaces: {}
+  purge_orphaned_interfaces: true
+
+  # NOTE: the role will fail if the interface (ip) changes
+  # IF the ip address changes, and you want the execution to re-connect to the new one
+  # post_apply_ip: '192.168.1.1'
+
+  reload_timeout: 5
+
+  # network change-validation settings
+  validation:
+    enable: false
+    # a python3 script (running as systemd service) will test your hosts network connectivity before and after network configuration-changes
+    # if the validation fails the network configuration will be restored to the old state
+    # this should help you to prevent locking yourself out of remote systems and troubleshooting config-errors
+    #   (/etc/network/interfaces* will be copied to /tmp/ if an error occurs)
+    # my inspiration for this feature comes from the handling by barracuda network-firewalls
+    retries: 3  # how often the tests should be retried before restoring the previous config state
+    retry_wait: 0.3  # seconds to wait between retries
+    test_timeout: 1  # timeout per test in seconds
+    apply_timeout: 30
+    logging: true
+    syslog_id: 'ansibleguy.linux_networking.activate_network'
+    tests:
+      # could be a list of some internal addresses that MUST BE reachable
+      # you might need to modify the default rule if icmp-ping is blocked in the network
+      ping:
+        google_dns: '8.8.8.8'
+  #    port:  # will test if the remote port is reachable
+  #      google_web:
+  #        host: 'google.com'
+  #        port: 443
+
+  startup_service:
+    enable: false
+    # the startup-service will enable the configuration of custom interfaces and routing
+    # it hooks into the default 'networking.service' so it gets applied every time the network gets reloaded
+    script: 'startup.sh'
+    name: 'ansibleguy.linux_networking.startup.service'
+    syslog_id: 'ansibleguy.linux_networking.startup'
+
+    interfaces: {}  # a dictionary of interfaces to be created by this role
+    # example:
+    #  tunnel01:
+    #    type: 'vti'
+    #    args:
+    #      key: 32
+    #      local: '192.168.133.1'
+    #      remote: '192.168.133.2'
+    #    addr: ['192.168.132.254/24']
+
+    interfaces_cmd: {}  # a dictionary of custom 'ip link add...' commands
+    # example:
+    #  startup_interfaces_cmd:
+    #    - 'ip link add name gre1 type ip6gre local LOCAL_IPv6_ADDR remote REMOTE_IPv6_ADDR'
+    #    - 'ip link add name gretap1 type ip6gretap local LOCAL_IPv6_ADDR remote REMOTE_IPv6_ADDR'
+    #   for more examples see: https://developers.redhat.com/blog/2019/05/17/an-introduction-to-linux-virtual-interfaces-tunnels
+
+    routes: {}  # a dictionary of routes to be created by this role
+    # example:
+    #   startup_routes:
+    #     '192.168.142.1':  # gateway to use; can be ip or device name
+    #       - net: 10.10.42.0/22  # network to route
+    #         metric: 50  # settings like route-metric
+
+    routes_cmd: {}  # a dictionary of custom 'ip route add...' commands
+    # example:
+    #  startup_interfaces_cmd:
+    #    - 'ip route add 10.10.42.0/22 dev tunnel0'
+    #    - 'ip route add 0.0.0.0 via 192.168.22.1 metric 200'
+
+# network interface settings
+#   for more details see: https://wiki.debian.org/NetworkConfiguration
+defaults_interface:
+  auto: true
+  method: 'static'
+  hotplug: true
+  nameservers: ['8.8.8.8', '1.1.1.1']
+  subnets: []
+  switching: false
+  vlan: false
+  bonding:
+    bond-downdelay: 200
+    bond-updelay: 200
+    bond-miimon: 100
+  aliases: []  # creating alias-interfaces to add more ips to it
+#  - address: 'fe80::100/10'
+#    gateway: 'fe80::1'

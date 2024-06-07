@@ -1,0 +1,11 @@
+---
+# handlers file for network_manager
+# roles/network/handlers/main.yml
+- name: Restart Network Interface
+  command: nmcli connection reload
+  ignore_errors: true
+
+- name: Bring up the new network interface
+  command: nmcli device connect {{ network_interface }}
+  ignore_errors: true
+  

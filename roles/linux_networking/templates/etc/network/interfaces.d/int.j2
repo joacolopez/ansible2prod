@@ -1,0 +1,47 @@
+# {{ ansible_managed }}
+# ansibleguy.linux_networking
+
+# for more config-details see: https://wiki.debian.org/NetworkConfiguration
+
+{# Basic interface config #}
+{% if iface.auto %}
+auto {{ name }}
+{% else %}
+allow {{ name }}
+{% endif %}
+{% if iface.hotplug %}
+allow-hotplug {{ name }}
+{% endif %}
+
+iface {{ name }} {% if iface.address | ansible.utils.ipv6 %}inet6{% else %}inet{% endif %} {% if iface.method == 'static' and 'address' not in iface %}manual{% else %}{{ iface.method }}{% endif %}
+
+{% for setting in ['address', 'netmask', 'gateway', 'pointopoint', 'dns_search', 'mtu'] %}
+{%   if setting in iface %}
+    {{ setting }} {{ iface[setting] }}
+{%   endif %}
+{% endfor %}
+{% if 'gateway' in iface %}
+    dns-nameservers {{ iface.nameservers | join(' ') }}
+{% endif %}
+
+{# Additional interface settings #}
+{% if iface.vlan %}
+{%   include "inc/vlan.j2" %}
+{% endif %}
+
+{% include "inc/script.j2" %}
+
+{% if 'bridge_ports' in iface or 'bond-mode' in iface %}
+    # custom interface types
+{% endif %}
+{% if 'bridge_ports' in iface %}
+{%   include "inc/bridge.j2" %}
+{% endif %}
+
+{% if 'bond-mode' in iface and iface['bond-mode'] in NW_HC.bonding_modes %}
+{%   include "inc/bond.j2" %}
+{% elif 'bond-mode' in iface and iface['bond-mode'] not in NW_HC.bonding_modes %}
+    # bond-mode '{{ iface['bond-mode'] }}' is unsupported! Supported modes: '{{ NW_HC.bonding_modes }}'
+{% endif %}
+
+{% include "inc/alias.j2" %}

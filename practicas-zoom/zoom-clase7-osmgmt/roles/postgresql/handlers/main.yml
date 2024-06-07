@@ -1,0 +1,10 @@
+---
+- name: Reiniciar PostgreSQL
+  systemd:
+    name: postgresql
+    state: restarted
+
+- name: Reiniciar UFW
+  systemd:
+    name: ufw
+    state: restarted

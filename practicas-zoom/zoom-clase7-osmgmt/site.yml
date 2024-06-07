@@ -1,0 +1,24 @@
+---
+- name: Configuración de PostgreSQL en Debian 10
+  hosts: db_servers
+  become: true
+  vars_files:
+    - vars/main.yml
+    - vars/packages.yml
+    - vars/directories.yml
+
+  pre_tasks:
+    - name: Actualizar apt cache
+      apt:
+        update_cache: yes
+      tags: always
+
+  roles:
+    - postgresql
+
+  post_tasks:
+    - name: Verificar estado de PostgreSQL
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes

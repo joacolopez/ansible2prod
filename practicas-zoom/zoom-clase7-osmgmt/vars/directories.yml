@@ -1,0 +1,5 @@
+---
+postgresql_paths:
+  - /etc/postgresql
+  - /var/lib/postgresql
+  - /var/log/postgresql

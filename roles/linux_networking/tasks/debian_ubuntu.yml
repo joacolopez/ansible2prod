@@ -1,0 +1,188 @@
+---
+- name: Network | Checking config
+  ansible.builtin.fail:
+    msg: "The required configuration was not provided! Needed: 'network'"
+  when: network is not defined
+
+- name: Network | Debian-Based | Installing dependencies on controller
+  ansible.builtin.pip:
+    name: "{{ NW_HC.controller_required_mods }}"
+    state: present
+  delegate_to: localhost
+  register: install_controller_requirements
+  ignore_errors: true
+  become: false
+  run_once: true
+
+- name: Network | Debian-Based | Notify User
+  ansible.builtin.pause:
+    prompt: "You need to install the python module 'netaddr' for this role to work correctly!"
+  run_once: true
+  when:
+    - install_controller_requirements.failed is defined
+    - install_controller_requirements.failed
+
+- name: Network | Debian-Based | Ubuntu => ask User
+  ansible.builtin.pause:
+    prompt: 'This role does currently not support the configuration of interfaces on ubuntu systems! Do you want to continue to run the basic tasks?'
+  when: ansible_distribution | lower == 'ubuntu'
+
+- name: Network | Debian-Based | Remove old validator config-backups
+  ansible.builtin.file:
+    path: "{{ NW_HC.network_script_dir }}/backup"
+    state: absent
+  when: NW.validation.enable | bool
+  tags: [routing, interfaces, base]
+  changed_when: false
+
+- name: Network | Debian-Based | Re-creating validator backup-directory
+  ansible.builtin.file:
+    path: "{{ NW_HC.network_script_dir }}/backup"
+    owner: 'root'
+    group: 'root'
+    state: directory
+    mode: 0755
+  when: NW.validation.enable | bool
+  tags: [routing, interfaces, base]
+  changed_when: false
+
+- name: Network | Debian-Based | Installing network tools
+  ansible.builtin.apt:
+    name: "{{ NW.tools }}"
+    state: present
+  when: NW.install_tools
+
+- name: Network | Debian-Based | Installing vlan package
+  ansible.builtin.apt:
+    name: ['vlan']
+    state: present
+  when: NW.support.vlan
+  tags: interfaces
+  register: prerequisite_vlan_pkg
+
+- name: Network | Debian-Based | Add the 802.1q module for vlan support (1/2)
+  ansible.builtin.shell:
+    cmd: 'modprobe 8021q'
+  when: NW.support.vlan
+  tags: interfaces
+  register: prerequisite_vlan_mod
+
+- name: Network | Debian-Based | Add the 802.1q module for vlan support (2/2)
+  ansible.builtin.lineinfile:
+    path: '/etc/modules'
+    line: '8021q'
+  when: prerequisite_vlan_mod.changed
+  tags: interfaces
+
+- name: Network | Debian-Based | Installing bonding package
+  ansible.builtin.apt:
+    name: ['ifenslave']
+    state: present
+  when: NW.support.bonding
+  tags: interfaces
+  register: prerequisite_bonding_pkg
+
+- name: Network | Debian-Based | Add the bonding module for nic-teaming support (1/2)
+  ansible.builtin.shell:
+    cmd: 'modprobe {{ item }}'
+  when: NW.support.bonding
+  tags: interfaces
+  register: prerequisite_bonding_mod
+  loop:
+    - 'bonding'
+    - 'mii'
+
+- name: Network | Debian-Based | Add the bonding module for nic-teaming support (2/2)
+  ansible.builtin.lineinfile:
+    path: '/etc/modules'
+    line: "{{ item }}"
+  when: prerequisite_bonding_mod.changed
+  changed_when: false
+  tags: interfaces
+  loop:
+    - 'bonding'
+    - 'mii'
+
+- name: Network | Debian-Based | Installing bridge package
+  ansible.builtin.apt:
+    name: ['bridge-utils']
+    state: present
+  when: NW.support.bridge
+  tags: interfaces
+  register: prerequisite_bridge_pkg
+
+- name: Network | Debian-Based | Configuring sysctl to allow traffic forwarding
+  ansible.builtin.shell:
+    cmd: "sysctl -w {{ item.key }}={{ item.value }}"
+  with_dict: "{{ NW_HC.sysctl.forwarding.enable }}"
+  when: NW.support.traffic_forwarding
+  tags: routing
+
+- name: Network | Debian-Based | Configuring sysctl to dis-allow traffic forwarding
+  ansible.builtin.shell:
+    cmd: "sysctl -w {{ item.key }}={{ item.value }}"
+  with_dict: "{{ NW_HC.sysctl.forwarding.disable }}"
+  when: NW.support.traffic_forwarding
+  tags: routing
+
+- name: Network | Debian-Based | Configuring sysctl to enable ipv6
+  ansible.builtin.shell:
+    cmd: "sysctl -w {{ item.key }}={{ item.value }}"
+  with_dict: "{{ NW_HC.sysctl.ipv6.enable }}"
+  when: NW.support.ipv6
+  tags: [routing, interfaces]
+
+- name: Network | Debian-Based | Configuring sysctl to disable ipv6
+  ansible.builtin.shell:
+    cmd: "sysctl -w {{ item.key }}={{ item.value }}"
+  with_dict: "{{ NW_HC.sysctl.ipv6.disable }}"
+  when: not NW.support.ipv6
+  tags: [routing, interfaces]
+
+# I can't seem to find a way to stop ansible from getting stuck when ip changes
+- name: Network | Debian-Based | Reloading network after prerequisit-changes
+  ansible.builtin.systemd:
+    name: 'networking.service'
+    state: restarted
+    no_block: true
+  async: "{{ NW.reload_timeout }}"
+  poll: 2
+  when: >
+    (prerequisite_vlan_mod is defined and prerequisite_vlan_mod.changed) or
+    (prerequisite_vlan_pkg is defined and prerequisite_vlan_pkg.changed) or
+    (prerequisite_bonding_mod is defined and prerequisite_bonding_mod.changed) or
+    (prerequisite_bonding_pkg is defined and prerequisite_bonding_pkg.changed) or
+    (prerequisite_bridge_pkg is defined and prerequisite_bridge_pkg.changed)
+
+- name: Network | Debian-Based | Waiting to re-establish connection
+  ansible.builtin.wait_for_connection:
+    timeout: "{{ NW_HC.network_apply_timeout }}"
+  register: connection_restore
+  ignore_errors: true
+
+- name: Network | Debian-Based | Checking if ufw allows forwarded traffic
+  ansible.builtin.command: |
+    set -o pipefail
+    cat /etc/default/ufw | grep FORWARD_POLICY | grep -c DROP
+  args:
+    executable: '/bin/bash'
+  register: ufw_policy_forward
+  when: NW.support.traffic_forwarding
+  changed_when: false
+  check_mode: false
+  tags: routing
+
+- name: Network | Debian-Based | Nofifying user about ufw forward-policy
+  ansible.builtin.pause:
+    prompt: "It seems that your ufw config does not allow forwarded traffic ('policy_forward') => you might need to change this or create specific rules to allow forwarded traffic! Else it won't work!"
+    seconds: 5
+  tags: routing
+  when:
+    - NW.support.traffic_forwarding
+    - ufw_policy_forward.stdout is defined
+    - ufw_policy_forward.stdout | int == 1
+    - ufw_config is undefined or (ufw_config.policy_forward is defined and ufw_config.policy_forward == 'DROP')
+
+- name: Network | Debian-Based | Processing debian config
+  ansible.builtin.import_tasks: debian/main.yml
+  when: ansible_distribution | lower == 'debian'

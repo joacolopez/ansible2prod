@@ -1,0 +1,26 @@
+BaseDir "/opt/collectd/var/lib/collectd"
+PluginDir "/opt/collectd/lib/collectd"
+TypesDB "/opt/collectd/share/collectd/types.db"
+
+LoadPlugin logfile
+<Plugin logfile>
+  LogLevel info
+  File "/var/log/collectd.log"
+  Timestamp true
+</Plugin>
+
+LoadPlugin syslog
+<Plugin syslog>
+  LogLevel info
+</Plugin>
+
+LoadPlugin cpu
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin interface
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin network
+LoadPlugin processes
+LoadPlugin swap
+LoadPlugin users

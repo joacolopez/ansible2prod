@@ -1,0 +1,10 @@
+---
+postgresql_version: 11
+postgresql_conf_path: /etc/postgresql/{{ postgresql_version }}/main/postgresql.conf
+pg_hba_conf_path: /etc/postgresql/{{ postgresql_version }}/main/pg_hba.conf
+postgresql_users:
+  - name: dbuser
+    password: "password123"
+postgresql_databases:
+  - name: mydatabase
+    owner: dbuser

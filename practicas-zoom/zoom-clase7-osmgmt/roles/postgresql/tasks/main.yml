@@ -1,0 +1,129 @@
+---
+- name: Elimina si existe una instalación de postgres
+  apt:
+    name: postgresql*
+    state: absent
+    purge: yes
+
+- name: Remueve directorios de postgres 
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop: "{{ postgresql_paths }}"
+
+- name: Remueve usuario postgres
+  user:
+    name: postgres
+    state: absent
+    remove: yes
+
+- name: Remueve grupo postgres
+  group:
+    name: postgres
+    state: absent
+
+- name: Instalar paquetes y dependencias para postgres
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ postgresql_packages }}"
+
+- name: Instalar paquetes pip
+  pip:
+    name: "{{ item }}"
+    state: present
+    executable: pip3
+  loop: "{{ pip_packages }}"
+
+- name: Crear archivo de configuración de PostgreSQL desde plantilla
+  template:
+    src: postgresql.conf.j2
+    dest: "{{ postgresql_conf_path }}"
+  notify: Reiniciar PostgreSQL
+
+- name: Crear archivo pg_hba.conf desde plantilla
+  template:
+    src: pg_hba.conf.j2
+    dest: "{{ pg_hba_conf_path }}"
+  notify: Reiniciar PostgreSQL
+
+- name: Crear usuarios de PostgreSQL
+  postgresql_user:
+    name: "{{ item.name }}"
+    password: "{{ item.password }}"
+    state: present
+  loop: "{{ postgresql_users }}"
+  become_user: postgres
+
+- name: Crear bases de datos de PostgreSQL
+  postgresql_db:
+    name: "{{ item.name }}"
+    owner: "{{ item.owner }}"
+    state: present
+  loop: "{{ postgresql_databases }}"
+  become_user: postgres
+
+- name: Descargar el archivo de colecta
+  get_url:
+    url: https://storage.googleapis.com/collectd-tarballs/collectd-5.12.0.tar.bz2
+    dest: /tmp/collectd-5.12.0.tar.bz2
+
+- name: Extraer el archivo de colecta
+  ansible.builtin.unarchive:
+    src: /tmp/collectd-5.12.0.tar.bz2
+    dest: /tmp
+    remote_src: yes
+
+- name: Compilar e instalar el plugin de PostgreSQL para collectd
+  shell: |
+    cd /tmp/collectd-5.12.0
+    ./configure --with-libpq
+    make
+    sudo make install
+  args:
+    creates: /opt/collectd/sbin/collectd
+
+- name: Configurar collectd para PostgreSQL
+  template:
+    src: collectd.conf.j2
+    dest: /opt/collectd/etc/collectd.conf
+
+- name: Crear script de backup desde plantilla
+  template:
+    src: backup.sh.j2
+    dest: /usr/local/bin/backup_{{ item.name }}.sh
+    mode: '0755'
+  loop: "{{ postgresql_databases }}"
+
+- name: Configurar cron jobs para backups automáticos
+  cron:
+    name: "Backup de {{ item.name }}"
+    user: postgres
+    minute: "0"
+    hour: "2"
+    job: "/usr/local/bin/backup_{{ item.name }}.sh"
+  loop: "{{ postgresql_databases }}"
+
+- name: Instalar pg_stat_statements
+  postgresql_ext:
+    name: pg_stat_statements
+    state: present
+    db: "{{ item.name }}"
+  loop: "{{ postgresql_databases }}"
+  become_user: postgres
+
+- name: Crear archivo de sobrescritura para collectd
+  file:
+    path: /etc/systemd/system/collectd.service.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Configurar sobrescritura de collectd
+  copy:
+    content: |
+      [Service]
+      ExecStart=
+      ExecStart=/opt/collectd/sbin/collectd -C /opt/collectd/etc/collectd.conf -f
+    dest: /etc/systemd/system/collectd.service.d/override.conf

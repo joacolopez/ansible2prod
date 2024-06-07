@@ -1,0 +1,58 @@
+---
+# network_manager/tasks/main.yml
+- name: Ensure the network interface exists
+  command: ip link show {{ network_interface }}
+  register: interface_check
+  failed_when: interface_check.rc != 0
+  ignore_errors: yes
+
+- name: Create the network interface if it does not exist
+  command: ip link add name {{ network_interface }} type dummy
+  when: interface_check.rc != 0
+
+- name: Bring up the network interface
+  command: ip link set {{ network_interface }} up
+
+- name: Backup current network configuration
+  command: cp /etc/network/interfaces.d/{{ network_interface }} /etc/network/interfaces.d/{{ network_interface }}.bak
+  ignore_errors: yes
+
+- name: Configure {{ network_interface }} network interface
+  copy:
+    dest: /etc/network/interfaces.d/{{ network_interface }}
+    content: |
+      auto {{ network_interface }}
+      iface {{ network_interface }} inet static
+        address {{ ip_address }}
+        netmask {{ netmask }}
+        gateway {{ gateway }}
+        dns-nameservers {{ dns_servers }}
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Restart Network Interface
+    - Bring up the new network interface
+
+- name: Add eth1 configuration to /etc/network/interfaces
+  blockinfile:
+    path: /etc/network/interfaces
+    marker: "# {mark} ANSIBLE MANAGED BLOCK for {{ network_interface }}"
+    block: |
+      allow-hotplug {{ network_interface }}
+      iface {{ network_interface }} inet static
+        address {{ ip_address }}
+        netmask {{ netmask }}
+        gateway {{ gateway }}
+        dns-nameservers {{ dns_servers }}
+  notify:
+    - Restart Network Interface
+    - Bring up the new network interface
+
+- name: Verify new IP address is configured
+  command: ip a show {{ network_interface }}
+  register: result
+
+- name: Display IP address configuration
+  debug:
+    msg: "{{ result.stdout }}"

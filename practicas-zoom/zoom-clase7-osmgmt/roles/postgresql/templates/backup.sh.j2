@@ -1,0 +1,4 @@
+#!/bin/bash
+export PGPASSWORD="{{ lookup('vars', 'postgresql_users') | selectattr('name', 'equalto', item.owner) | map(attribute='password') | first }}"
+pg_dump -U {{ item.owner }} -F c -b -v -f /var/backups/{{ item.name }}_$(date +\%F).backup {{ item.name }}
+

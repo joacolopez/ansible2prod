@@ -1,0 +1,78 @@
+---
+
+# todo: check if two interfaces have a gateway defined => one of those will not come up since it's a configuration error..
+
+- name: Network | Interfaces | Creating interface directory
+  ansible.builtin.file:
+    path: '/etc/network/interfaces.d'
+    owner: 'root'
+    group: 'root'
+    state: directory
+    mode: 0755
+
+- name: Getting current configured interfaces
+  ansible.builtin.command: 'ls /etc/network/interfaces.d/'
+  register: installed_interfaces
+  when: NW.purge_orphaned_interfaces
+  check_mode: false
+  changed_when: false
+
+- name: Network | Interfaces | Purging orphaned interfaces
+  ansible.builtin.include_tasks: purge.yml
+  loop_control:
+    loop_var: iface_name
+  loop: "{{ installed_interfaces.stdout_lines }}"
+  no_log: true
+  when:
+    - NW.purge_orphaned_interfaces
+    - iface_name not in NW.interfaces
+
+- name: Network | Interfaces | Configuring network interfaces
+  ansible.builtin.include_tasks: interface-device.yml
+  when: >
+    (iface.address is defined and iface.address | ansible.utils.ipaddr) or
+    iface.method == 'dhcp'
+  vars:
+    iface: "{{ defaults_interface | combine(iface_item.value, recursive=true) }}"
+    name: "{{ iface_item.key }}"
+    file: "/etc/network/interfaces.d/{{ name }}"
+    copy_device_iface:
+    copy_device_iface_file:
+  loop_control:
+    loop_var: iface_item
+  with_dict: "{{ NW.interfaces }}"
+  no_log: true
+
+- name: Network  | Interfaces | Checking if main interface file changed
+  ansible.builtin.template:
+    src: 'templates/etc/network/interfaces.j2'
+    dest: '/etc/network/interfaces'
+    owner: 'root'
+    group: 'root'
+    mode: 0644
+  check_mode: true
+  register: copy_main_iface
+  when: NW.validation.enable | bool
+
+- name: Network | Interfaces | Backing-up current config if changed/exists
+  ansible.builtin.copy:
+    src: '/etc/network/interfaces'
+    remote_src: true
+    dest: "{{ NW_HC.network_script_dir }}/backup/{{ '/etc/network/interfaces' | replace('/', NW_HC.validation.backup_path_separator) }}"
+    owner: 'root'
+    group: 'root'
+    mode: 0644
+  when:
+    - NW.validation.enable | bool
+    - copy_main_iface.changed
+
+- name: Network  | Interfaces | Copying main interface file
+  ansible.builtin.template:
+    src: 'templates/etc/network/interfaces.j2'
+    dest: '/etc/network/interfaces'
+    owner: 'root'
+    group: 'root'
+    mode: 0644
+  when: >
+    not NW.validation.enable | bool or
+    copy_main_iface.changed

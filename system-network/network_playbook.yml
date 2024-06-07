@@ -1,0 +1,19 @@
+---
+- name: NIC Configuration for Debian 10
+  hosts: webservers
+
+  pre_tasks:
+    - name: Ensure python3-apt is installed
+      apt:
+        name: python3-apt
+        state: present
+      delegate_to: localhost
+      run_once: true
+
+    - name: Ensure network-manager is installed
+      apt:
+        name: network-manager
+        state: present
+
+  roles:
+    - network_manager

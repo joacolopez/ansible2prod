@@ -1,0 +1,5 @@
+---
+#requirements.yml
+- src: https://github.com/ocp4labs/bash_env.git
+  version: master
+  name: curso.bash_env

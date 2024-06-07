@@ -1,3 +1,6 @@
 [webservers]
 serverb.lab.example.com
 
+[webtest]
+serverd.lab.example.com
+

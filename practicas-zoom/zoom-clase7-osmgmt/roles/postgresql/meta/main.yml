@@ -1,0 +1,13 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: jlopez
+  description: Configura PostgreSQL en Debian 10
+  company: self
+  license: license (GPLv2, MIT, etc)
+  min_ansible_version: 2.9
+  platforms:
+    - name: Debian
+      versions:
+        - buster
