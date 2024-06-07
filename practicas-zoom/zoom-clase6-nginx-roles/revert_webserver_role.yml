@@ -1,6 +1,6 @@
 ---
 - name: Revertir configuración de servidor web en Debian 10
-  hosts: web_server
+  hosts: awx_lab
   become: true
 
   tasks:
