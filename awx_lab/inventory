@@ -1,4 +1,5 @@
 [awx_lab]
-serverb.lab.example.com
-serverc.lab.example.com
-serverd.lab.example.com
+serverb.lab.example.com  ansible_host=serverb.lab.example.com
+serverc.lab.example.com  ansible_host=serverc.lab.example.com
+serverd.lab.example.com  ansible_host=serverd.lab.example.com
+
