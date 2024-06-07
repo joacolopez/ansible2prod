@@ -27,7 +27,7 @@
 
     - name: Obtener la página de bienvenida de nginx
       uri:
-        url: http://{{ ansible_facts['hostname'] }}
+        url: http://{{ ansible_facts['hostname'] }}:{{ nginx_port }}
         return_content: yes
         status_code: 200
       register: nginx_page
