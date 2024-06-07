@@ -2,8 +2,8 @@
 - name: Install and configure web service
   gather_facts: no
   hosts:
-    - CursoDebian
-    - wst000f000
+    - serverc.lab.example.com
+    - serverd.lab.example.com
 
   tasks:
   
