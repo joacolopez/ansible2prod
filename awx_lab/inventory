@@ -1,0 +1,4 @@
+[awx_lab]
+serverb.lab.example.com
+serverc.lab.example.com
+serverd.lab.example.com
