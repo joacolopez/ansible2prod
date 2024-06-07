@@ -9,6 +9,7 @@
         name: nginx
         state: stopped
         enabled: no
+      ignore_errors: true
 
     - name: Desinstalar nginx y curl
       apt:
@@ -16,18 +17,22 @@
           - nginx
           - curl
         state: absent
+      ignore_errors: true
 
     - name: Eliminar archivo de configuración de nginx
       file:
         path: /etc/nginx/nginx.conf
         state: absent
+      ignore_errors: true
 
     - name: Eliminar página de bienvenida
       file:
         path: /var/www/html/index.html
         state: absent
+      ignore_errors: true
 
     - name: Eliminar directorio de backups de nginx
       file:
         path: /var/backups/nginx
         state: absent
+      ignore_errors: true
