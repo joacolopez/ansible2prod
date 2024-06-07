@@ -1,6 +1,6 @@
 ---
 - name: NIC Configuration for Debian 10
-  hosts: webservers
+  hosts: awx_lab
 
   pre_tasks:
     - name: Ensure python3-apt is installed

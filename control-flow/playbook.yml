@@ -1,6 +1,6 @@
 ---
 - name: MariaDB server is runing
-  hosts: database_prod
+  hosts: awx_lab
   vars:
     mariadb_packages:
       - mariadb-server

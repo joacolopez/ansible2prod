@@ -1,6 +1,4 @@
 [databases]
 serverb.lab.example.com
-
-[db2]
 serverd.lab.example.com
 

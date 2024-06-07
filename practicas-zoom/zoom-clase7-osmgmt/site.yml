@@ -1,6 +1,6 @@
 ---
 - name: Configuración de PostgreSQL en Debian 10
-  hosts: db_servers
+  hosts: awx_lab
   become: true
   vars_files:
     - vars/main.yml
